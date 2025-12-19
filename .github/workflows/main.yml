@@ -43,7 +43,7 @@ jobs:
         with:
           # 添加额外的SonarCloud参数（可选）
           args: >
-            -Dsonar.projectKey=shaoyang-chen-ics4u1-01-25_ics4u-culminating-analysis-repo
+            -Dsonar.projectKey=shaoyang-chen-ics4u1-01-25
             -Dsonar.organization=shaoyang-chen-ics4u1-01-25
             -Dsonar.java.coveragePlugin=jacoco
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
