@@ -36,7 +36,7 @@ jobs:
           mvn clean test jacoco:report  # 假设使用JaCoCo进行覆盖率分析
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
           # 添加额外的SonarCloud参数（可选）
           args: >
             -Dsonar.projectKey=shaoyang-chen-ics4u1-01-25_ics4u-culminating-analysis-repo
-            -Dsonar.organization=Shaoyang Chen
+            -Dsonar.organization=shaoyang-chen-ics4u1-01-25
             -Dsonar.java.coveragePlugin=jacoco
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
 
