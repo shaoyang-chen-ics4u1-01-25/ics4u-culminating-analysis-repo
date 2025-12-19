@@ -30,25 +30,6 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Build and run specific test
-        id: specific-test
-        run: |
-          # 编译项目
-          mvn compile
-          
-          # 运行特定测试类
-          echo "Running PraticeProblemTest..."
-          mvn test -Dtest=src/test/java/PraticeProblemTest
-          
-          # 检查测试结果
-          if [ $? -eq 0 ]; then
-            echo "result=pass" >> $GITHUB_OUTPUT
-            echo "score=10" >> $GITHUB_OUTPUT
-          else
-            echo "result=fail" >> $GITHUB_OUTPUT
-            echo "score=0" >> $GITHUB_OUTPUT
-          fi
-
       - name: Run all tests for coverage
         run: |
           # 运行所有测试以生成覆盖率报告
