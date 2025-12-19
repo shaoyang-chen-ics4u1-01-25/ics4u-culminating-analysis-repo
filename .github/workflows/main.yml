@@ -51,7 +51,7 @@ jobs:
       - name: Codacy Analysis
         uses: codacy/codacy-analysis-cli-action@master
         with:
-          project-token: ${{ EMU48FbNcPuZdywC4zSj }}
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           verbose: true
           # 指定分析工具（根据您的项目选择）
           tool: checkstyle,pmd,findbugs,jacoco
